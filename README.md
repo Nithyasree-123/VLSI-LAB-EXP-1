@@ -40,12 +40,158 @@ Full Subtractor:
 
 
 VERILOG CODE:
+# Logic gates
+```
+module logicgate (a,b,andgate,orgate,xorgate,nandgate,norgate,xnorgate,notgate);
+input a,b;  
+output andgate,orgate,xorgate,nandgate,norgate,xnorgate,notgate;
+and(andgate,a,b);
+or(orgate,a,b);
+xor(xorgate,a,b);
+nand(nandgate,a,b); 
+nor(norgate,a,b);
+xnor(xnorgate,a,b);
+not(notgate,a);
+endmodule
+```
+# half adder
+```
+module ha(a,b,sum,carry);
+input a,b;
+output sum,carry;
+endmodule
+module multi_2(a,b,p,carry);
+input [1:0]a,b;
+output [2:0]p;
+output carry;
+endmodule
+```
+# half subtractor
+```
+module halfsubtractor(a,b,diff,borrow);
+input a,b;
+output diff,borrow;
+xor g1(diff,a,b);
+and g2(borrow,~a,b);
+endmodule
+```
 
-----Type Verilog Code
+# full adder
+```
+module fadd(a,b,c,sum,carry);
+input a,b,c;
+output sum,carry;
+wire w1,w2,w3;
+xor g1(w1,a,b);
+and g2(w2,a,b);
+xor g3(sum,w1,c);
+and g4(w3,w1,c);
+or g5(carry,w3,w2);
+endmodule
+```
+# full subtractor
+```
+module fs(a,b,bin,d,bout);
+input a,b,bin; 
+output d,bout;
+wire w1,w2,w3;
+xor g1(w1,b,bin; 
+xor g2(d,w1,a);
+and g3(w2,a,~w1);
+and g4(w3,~b,bin);
+or g5(bout,w2,w3);
+endmodule
+```
+# 8 bit ripple carry adder
+```
+module ripplemod(a, b, cin, sum, cout);
+input [07:0] a;
+input [07:0] b;
+input cin;
+output [7:0]sum;
+output cout;
+wire[6:0] c;
+fulladd a1(a[0],b[0],cin,sum[0],c[0]);
+fulladd a2(a[1],b[1],c[0],sum[1],c[1]);
+fulladd a3(a[2],b[2],c[1],sum[2],c[2]);
+fulladd a4(a[3],b[3],c[2],sum[3],c[3]);
+fulladd a5(a[4],b[4],c[3],sum[4],c[4]);
+fulladd a6(a[5],b[5],c[4],sum[5],c[5]);
+fulladd a7(a[6],b[6],c[5],sum[6],c[6]);
+fulladd a8(a[7],b[7],c[6],sum[7],cout);
+endmodule
+module fulladd(a, b, cin, sum, cout);
+input a;
+input b;
+input cin;
+output sum;
+output cout;
+assign sum=(a^b^cin);
+assign cout=((a&b)|(b&cin)|(a&cin));
+endmodule
+```
+
+
 
 OUTPUT:
+AND GATE
+![image](https://github.com/Nithyasree-123/VLSI-LAB-EXP-1/assets/164908713/7565217d-bf8c-40c8-bc2c-b0bc1d152e95)
+OR GATE
 
------Place a Waveform Generated from Xilinx ISE
+![image](https://github.com/Nithyasree-123/VLSI-LAB-EXP-1/assets/164908713/3db57c0b-5b78-4697-b55e-7d89a0d45b61)
+
+NAND GATE
+
+![image](https://github.com/Nithyasree-123/VLSI-LAB-EXP-1/assets/164908713/8f254441-c8ef-4a5d-aa18-5aea1e079f7a)
+
+NOR GATE
+
+
+![image](https://github.com/Nithyasree-123/VLSI-LAB-EXP-1/assets/164908713/b4faca71-d664-4b47-bf23-53958d6d9a74)
+
+XOR GATE
+
+![image](https://github.com/Nithyasree-123/VLSI-LAB-EXP-1/assets/164908713/a59fa2fb-b050-4eda-aa3e-01e84d4abb70)
+
+XNOR GATE
+
+
+![image](https://github.com/Nithyasree-123/VLSI-LAB-EXP-1/assets/164908713/c754d6aa-047d-4f95-96dd-6d6ea4ffa3a0)
+
+NOT GATE
+
+
+![image](https://github.com/Nithyasree-123/VLSI-LAB-EXP-1/assets/164908713/7565aca8-04dd-4ce2-af50-aea1bb38123b)
+
+HALF ADDER
+
+
+![image](https://github.com/Nithyasree-123/VLSI-LAB-EXP-1/assets/164908713/24d91bfe-9e17-486b-b8c0-c0bc653bfcc6)
+
+HALF SUBTRACTOR
+
+
+![image](https://github.com/Nithyasree-123/VLSI-LAB-EXP-1/assets/164908713/9d187a79-0ac3-4bbc-ab10-5b1a5de8ed24)
+
+FULL ADDER
+
+
+![image](https://github.com/Nithyasree-123/VLSI-LAB-EXP-1/assets/164908713/43c39c90-4c00-4451-956e-af3f254e7e3e)
+
+FULL SUBTRACTOR
+
+
+![image](https://github.com/Nithyasree-123/VLSI-LAB-EXP-1/assets/164908713/a3bce7cc-79bd-4931-a6b6-faa7773df523)
+
+8 BIT RIPPLE CARRY ADDER
+
+
+
+![image](https://github.com/Nithyasree-123/VLSI-LAB-EXP-1/assets/164908713/df433d53-18e3-4f16-a113-8611a0d00f15)
+
+
 
 RESULT:
+Hence Logic Gates,Adders and Subtractor are simulated and synthesised using Xilinx ISE.
+
 
