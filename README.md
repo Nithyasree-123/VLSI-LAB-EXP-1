@@ -203,7 +203,9 @@ endmodule
 
 <img width="752" alt="316600882-f9882fac-e3b9-479b-89dc-4297909fe241" src="https://github.com/Nithyasree-123/VLSI-LAB-EXP-1/assets/164908713/3a59c97d-6b2d-4223-8c49-7420934fc44d">
 
-## RESULT:
+
+
+### RESULT:
 Hence Logic Gates,Adders and Subtractor are simulated and synthesised using Xilinx ISE.
 
 
