@@ -215,6 +215,9 @@ endmodule
 
 ![329669317-10641778-6e01-41e7-88ed-cea08306d265](https://github.com/Nithyasree-123/VLSI-LAB-EXP-1/assets/164908713/d8f734fb-155a-492e-9292-1dc3178c9031)
 
+
+
+
 ### RESULT:
 
 Thus the simulation and synthesis of Logic Gates,Adders and Subtractors using vivado has been sucessfully executed and verified .
