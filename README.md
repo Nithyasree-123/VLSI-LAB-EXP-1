@@ -13,7 +13,7 @@ STEP:1 Start the vivado software, Select and Name the New project.
 
 STEP:2 Select the device family, device, package and speed.
 
-STEP:3 Select new source in the New Project and select Verilog Module as the Source type.
+STEP:3 Select new source in the New Project and select Verilog Module as the Source type. 
 
 STEP:4 Type the File Name and module name and Click Next and then finish button. Type the code and save it.
 
